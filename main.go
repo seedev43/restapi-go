@@ -4,6 +4,7 @@ import (
 	"ephoto/modules"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gofiber/fiber/v3"
 )
@@ -39,8 +40,12 @@ func main() {
 			"data":    res,
 		})
 	})
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
 
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":" + port))
 
 	// fmt.Println(ok)
 }
