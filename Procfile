@@ -1,1 +1,1 @@
-worker: bin/ephoto
+web: bin/ephoto
