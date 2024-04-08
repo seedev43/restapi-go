@@ -50,8 +50,8 @@ func Ephoto360(urlEphoto string, texts ...string) (interface{}, error) {
 	}
 
 	cookies := res.Cookies()
-	// Load the HTML document
 
+	// Load the HTML document
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	if err != nil {
 		return nil, err
@@ -116,6 +116,7 @@ func Ephoto360(urlEphoto string, texts ...string) (interface{}, error) {
 		return nil, err
 	}
 
+	// add cookie to header
 	for _, cookie := range cookies {
 		request.AddCookie(cookie)
 	}
