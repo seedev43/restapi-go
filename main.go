@@ -47,5 +47,4 @@ func main() {
 
 	log.Fatal(app.Listen(":" + port))
 
-	// fmt.Println(ok)
 }
